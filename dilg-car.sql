@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: dilg-car
+-- Host: localhost    Database: dilg
 -- ------------------------------------------------------
--- Server version	5.7.14
+-- Server version	5.7.11
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,6 +41,89 @@ CREATE TABLE `applicationforleave` (
 LOCK TABLES `applicationforleave` WRITE;
 /*!40000 ALTER TABLE `applicationforleave` DISABLE KEYS */;
 /*!40000 ALTER TABLE `applicationforleave` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `civilserviceeligibility`
+--
+
+DROP TABLE IF EXISTS `civilserviceeligibility`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `civilserviceeligibility` (
+  `civilService_id` varchar(10) NOT NULL,
+  `civilServiceName` varchar(150) DEFAULT NULL,
+  `rating` varchar(45) DEFAULT NULL,
+  `dateOfExamination` varchar(45) DEFAULT NULL,
+  `placeOfExamination` varchar(45) DEFAULT NULL,
+  `licenseNumber` varchar(45) DEFAULT NULL,
+  `licenseDateOfValidity` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`civilService_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `civilserviceeligibility`
+--
+
+LOCK TABLES `civilserviceeligibility` WRITE;
+/*!40000 ALTER TABLE `civilserviceeligibility` DISABLE KEYS */;
+/*!40000 ALTER TABLE `civilserviceeligibility` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `division`
+--
+
+DROP TABLE IF EXISTS `division`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `division` (
+  `division_id` varchar(10) NOT NULL,
+  `division_code` int(10) DEFAULT NULL,
+  `division` varchar(45) DEFAULT NULL,
+  `province` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`division_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `division`
+--
+
+LOCK TABLES `division` WRITE;
+/*!40000 ALTER TABLE `division` DISABLE KEYS */;
+/*!40000 ALTER TABLE `division` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `educationalbackground`
+--
+
+DROP TABLE IF EXISTS `educationalbackground`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `educationalbackground` (
+  `educ_id` varchar(10) NOT NULL,
+  `level` varchar(45) DEFAULT NULL,
+  `nameOfSchool` varchar(200) DEFAULT NULL,
+  `basicEducationDegreeCourse` varchar(100) DEFAULT NULL,
+  `periodOfAttendanceFrom` varchar(45) DEFAULT NULL,
+  `periodOfAttendanceTo` varchar(45) DEFAULT NULL,
+  `highestLevelEarnedUnits` varchar(45) DEFAULT NULL,
+  `yearGraduated` varchar(45) DEFAULT NULL,
+  `scholarshipsAcademicHonorsReceived` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`educ_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `educationalbackground`
+--
+
+LOCK TABLES `educationalbackground` WRITE;
+/*!40000 ALTER TABLE `educationalbackground` DISABLE KEYS */;
+/*!40000 ALTER TABLE `educationalbackground` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -322,6 +405,36 @@ LOCK TABLES `voluntary_works` WRITE;
 /*!40000 ALTER TABLE `voluntary_works` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voluntary_works` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `workexperience`
+--
+
+DROP TABLE IF EXISTS `workexperience`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `workexperience` (
+  `workExperience_id` varchar(10) NOT NULL,
+  `startJobDate` varchar(45) DEFAULT NULL,
+  `endJobDate` varchar(45) DEFAULT NULL,
+  `positionTitle` varchar(45) DEFAULT NULL,
+  `departmentAgencyOfficeCompany` varchar(45) DEFAULT NULL,
+  `monthlySalary` varchar(45) DEFAULT NULL,
+  `salaryJobPayGradesStep` varchar(45) DEFAULT NULL,
+  `statusOfAppointment` varchar(45) DEFAULT NULL,
+  `GovernmentService` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`workExperience_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `workexperience`
+--
+
+LOCK TABLES `workexperience` WRITE;
+/*!40000 ALTER TABLE `workexperience` DISABLE KEYS */;
+/*!40000 ALTER TABLE `workexperience` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -332,4 +445,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-07 21:18:43
+-- Dump completed on 2018-02-08 22:12:13
