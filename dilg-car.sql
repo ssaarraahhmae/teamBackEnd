@@ -194,7 +194,6 @@ CREATE TABLE `employee` (
   `citezenship_country` varchar(45) DEFAULT NULL,
   `citizenship_info` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL COMMENT 'Di ko pa alam kung paano to galawin. ',
-  `position_id` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`emp_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -440,6 +439,7 @@ DROP TABLE IF EXISTS `position`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `position` (
   `position_id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` varchar(6) DEFAULT NULL,
   `position` varchar(45) DEFAULT NULL,
   `salary_grade` int(2) DEFAULT NULL,
   `salary` int(6) DEFAULT NULL COMMENT 'Heto yung per month? hahaha. Kaya 6 digits lang. Di ko sure.\n\nDouble check na lang. Hahaha.',
@@ -636,4 +636,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-16 19:47:11
+-- Dump completed on 2018-02-21 16:32:45
