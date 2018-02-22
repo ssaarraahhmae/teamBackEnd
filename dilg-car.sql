@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `dilg` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `dilg`;
+-- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
 --
--- Host: localhost    Database: dilg_car
+-- Host: localhost    Database: dilg
 -- ------------------------------------------------------
--- Server version	5.7.14
+-- Server version	5.6.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -93,6 +95,7 @@ CREATE TABLE `civilserviceeligibility` (
 
 LOCK TABLES `civilserviceeligibility` WRITE;
 /*!40000 ALTER TABLE `civilserviceeligibility` DISABLE KEYS */;
+INSERT INTO `civilserviceeligibility` VALUES ('','E-1873','Career Service Eligibility - Professional','80.27%','0000-00-00','Civil Service Commission - CAR','05-014767','0000-00-00');
 /*!40000 ALTER TABLE `civilserviceeligibility` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,6 +207,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+INSERT INTO `employee` VALUES ('E-1873','Papat-iw, Zaldy Bugtong','0000-00-00','M','Married',1.68,75,'O','CM-2052757		','1290-0052-8340		','01-1224965-2		','916-245-161		','Filipino','9','Magsaysay Drive',NULL,'Loakan Proper','Baguio','Benguet','2600','9','Magsaysay Drive',NULL,'Loakan Proper','Baguio City','Benguet','2600','+63744429030	','+639396559356','zaldypapatiw@gmail.com','Philippines',NULL,NULL);
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -281,6 +285,7 @@ CREATE TABLE `familybackground` (
 
 LOCK TABLES `familybackground` WRITE;
 /*!40000 ALTER TABLE `familybackground` DISABLE KEYS */;
+INSERT INTO `familybackground` VALUES ('','E-1873','Yu, Jovy Brillates','N/A','N/A','N/A','N/A','Papat-iw, Ignacio Lidawan Sr.','Bugtong, Josephine Ramirez');
 /*!40000 ALTER TABLE `familybackground` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -345,6 +350,7 @@ CREATE TABLE `other_info` (
 
 LOCK TABLES `other_info` WRITE;
 /*!40000 ALTER TABLE `other_info` DISABLE KEYS */;
+INSERT INTO `other_info` VALUES (0,'E-1873','Supervision for Database Administrator','TESDA Computer Hardware Servicing NC-II','Association of DILG Regional IT Officers');
 /*!40000 ALTER TABLE `other_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -479,6 +485,7 @@ CREATE TABLE `references` (
 
 LOCK TABLES `references` WRITE;
 /*!40000 ALTER TABLE `references` DISABLE KEYS */;
+INSERT INTO `references` VALUES (0,'E-1873','Director John M. Castaneda, Ceso III','DILG Region 2, Tuguegarao City, Cagayan','0939-935-2304');
 /*!40000 ALTER TABLE `references` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -565,6 +572,7 @@ CREATE TABLE `trainings` (
 
 LOCK TABLES `trainings` WRITE;
 /*!40000 ALTER TABLE `trainings` DISABLE KEYS */;
+INSERT INTO `trainings` VALUES (0,'E-1873','Database Training with Open-Source Software','0000-00-00','0000-00-00',40,'Technical','Information Systems & Technology Management Service - DILG');
 /*!40000 ALTER TABLE `trainings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -593,6 +601,7 @@ CREATE TABLE `voluntary_works` (
 
 LOCK TABLES `voluntary_works` WRITE;
 /*!40000 ALTER TABLE `voluntary_works` DISABLE KEYS */;
+INSERT INTO `voluntary_works` VALUES (0,'E-1873','Association of DILG Regional Information Tech','0000-00-00','0000-00-00',0,'5th Board Member');
 /*!40000 ALTER TABLE `voluntary_works` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -624,6 +633,7 @@ CREATE TABLE `workexperience` (
 
 LOCK TABLES `workexperience` WRITE;
 /*!40000 ALTER TABLE `workexperience` DISABLE KEYS */;
+INSERT INTO `workexperience` VALUES ('','E-1873','0000-00-00','0000-00-00','Information Technology Officer I','Department of the Interior and Local Governme',39,'19-2','PERMANENT','Y');
 /*!40000 ALTER TABLE `workexperience` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -636,4 +646,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-21 16:32:45
+-- Dump completed on 2018-02-21 23:08:39
