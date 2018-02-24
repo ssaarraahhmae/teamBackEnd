@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `dilg` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `dilg`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dilg
 -- ------------------------------------------------------
--- Server version	5.6.17
+-- Server version	5.7.11
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,6 +30,7 @@ CREATE TABLE `applicationforleave` (
   `sickInfo` varchar(350) DEFAULT NULL,
   `noOfWorkingDays` int(2) DEFAULT NULL,
   `inclusiveDates` varchar(100) DEFAULT NULL COMMENT 'Varchar lang siguro pwede dito di pwede data type na date. hahaha.',
+  `dateOfapplication` varchar(100) DEFAULT NULL,
   `status` enum('Accepted','Declined') DEFAULT NULL COMMENT 'Not sure. Hahhaa.',
   PRIMARY KEY (`app_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -412,10 +411,6 @@ CREATE TABLE `plantilla` (
   `position_id` varchar(45) DEFAULT NULL COMMENT 'di ko sure.',
   `division_id` varchar(45) DEFAULT NULL COMMENT 'di ko sure.',
   `itemNumber` varchar(30) DEFAULT NULL COMMENT 'Binase ko yung bilang dun sa Plantilla. 24 yung pinakamahaba dun pero ginaw ako ng 30 para sure. ',
-  `positionTitle` varchar(45) DEFAULT NULL COMMENT 'hmmm. Suggestion ko lang. Di kaya pwedeng kunin to sa position na table? kasi ginawa ko ginawa kong foreign key yung position_id sa mga employees.\nKasi dun sa posiiton table nilagyan ko ng ''Salary Grade'' na column yun. nawawala kasi yung salary grade natin. Hahaha. diba gusto ni sir na pwede mag-iba siya ng suweldo depende sa salary grade.\n\nDouble check na lang siguro to. Basta nagdagdag ako ng column na "Salary Grade" at "Salary". Tapos nag-foreign key ako dun sa Primary key ng position table dun sa employee. ',
-  `salaryGrade` int(2) DEFAULT NULL COMMENT 'Same sa positionTitle na comment.\nhmmm. Suggestion ko lang. Di kaya pwedeng kunin to sa position na table? kasi ginawa ko ginawa kong foreign key yung position_id sa mga employees.\nKasi dun sa posiiton table nilagyan ko ng ''Salary Grade'' na column yun. nawawala kasi yung salary grade natin. Hahaha. diba gusto ni sir na pwede mag-iba siya ng suweldo depende sa salary grade.\n\nDouble check na lang siguro to. Basta nagdagdag ako ng column na "Salary Grade" at "Salary". Tapos nag-foreign key ako dun sa Primary key ng position table dun sa employee. ',
-  `authorized_sal` int(7) DEFAULT NULL COMMENT 'hetong authorized sal heto ba yung ita-times 12 yung suweldo niya na naka-associate sa salary grade niya? \n\nDi ko sure. pacheck na lang ulit. Hahaha.\nGinawa kong INT (7) kasi konti na lang aabot na 1 million per year yung suweldo nung iba. Hahaha.',
-  `actual_sal` int(7) DEFAULT NULL,
   `step_increment` varchar(3) DEFAULT NULL COMMENT 'Nag-uumpisa siya ng "0" (zero) yung code nito kaya ginaw ako siyang varchar.',
   `area_code` varchar(45) DEFAULT NULL,
   `plantillacol` varchar(45) DEFAULT NULL,
@@ -445,11 +440,12 @@ DROP TABLE IF EXISTS `position`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `position` (
   `position_id` int(11) NOT NULL AUTO_INCREMENT,
-  `emp_id` varchar(6) DEFAULT NULL,
+  `emp_id` varchar(6) NOT NULL,
   `position` varchar(45) DEFAULT NULL,
   `salary_grade` int(2) DEFAULT NULL,
-  `salary` int(6) DEFAULT NULL COMMENT 'Heto yung per month? hahaha. Kaya 6 digits lang. Di ko sure.\n\nDouble check na lang. Hahaha.',
-  PRIMARY KEY (`position_id`)
+  `authorized_salary` int(6) DEFAULT NULL COMMENT 'Heto yung per month? hahaha. Kaya 6 digits lang. Di ko sure.\n\nDouble check na lang. Hahaha.',
+  `actual_salary` int(6) DEFAULT NULL,
+  PRIMARY KEY (`position_id`,`emp_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -646,4 +642,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-21 23:08:39
+-- Dump completed on 2018-02-24 22:45:35
