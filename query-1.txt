@@ -1,0 +1,27 @@
+name: select name from employee where emp_id='$emp_id';
+
+address: select concat(permanentAddressBarangay , permanentAddressCityMunicipality , permanentAddressHouseBlockLotNo , permanentAddressProvince , 
+permanentAddressStreet , permanentAddressSubdivisionVillage , permanentAddressZipcode) as "Address" from employee where emp_id='$emp_id';
+
+date of birth: select dateofbirth from employee where emp_id='$emp_id';
+
+sex: select sex from employee where emp_id='$emp_id';
+
+civilStatus: select civilstatus from employee where emp_id='$emp_id';
+
+height: select concat(height , " m") from employee where emp_id='$emp_id';
+
+weight: select concat(weight , " kg") from employee where emp_id='$emp_id';
+
+telephone number: select telephonenumber from employee where emp_id='$emp_id';
+
+mobile number: select mobilenumber from employee where emp_id='$emp_id';
+
+Educational Background: SELECT level,nameOfSchool,basicEducationDegreeCourse,periodOfAttendanceFrom, 
+periodOfAttendanceTo, highestLevelEarnedUnits,yearGraduated, 
+scholarshipsAcademicHonorsReceieved   
+FROM `dilg-hris`.educationalbackground as a,`dilg-hris`.employee as b 
+
+where (level = "elementary") and (a.emp_id = b.emp_id);
+
+Palitan yung "elemtary" depende sa row na paglalagyan
